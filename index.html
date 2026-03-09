@@ -1271,15 +1271,19 @@ function scheduleSave() { clearTimeout(saveTimer); saveTimer = setTimeout(saveTo
 // Poll every 15 seconds for changes from other computers
 setInterval(async () => {
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/patients?select=*&key=eq.data`, { headers: DB_HEADERS });
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/patients?select=*`, { headers: DB_HEADERS });
     if (!res.ok) return;
     const rows = await res.json();
-    const row = rows.find(r => r.key === 'data');
-    if (row && row.value && row.value !== lastSavedHash) {
-      patients = JSON.parse(row.value);
-      lastSavedHash = row.value;
-      render();
-      setSyncStatus('ok', 'Updated ✓');
+    const row = Array.isArray(rows) ? rows.find(r => r.key === 'data') : null;
+    if (row && row.value) {
+      const remoteHash = row.value;
+      const localHash = JSON.stringify(patients);
+      if (remoteHash !== localHash) {
+        patients = JSON.parse(row.value);
+        lastSavedHash = row.value;
+        render();
+        setSyncStatus('ok', 'Updated ✓');
+      }
     }
   } catch(e) {}
 }, 15000);
