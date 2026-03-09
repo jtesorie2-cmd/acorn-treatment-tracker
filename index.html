@@ -1249,17 +1249,17 @@ async function loadFromCloud() {
 
 async function saveToCloud() {
   const payload = JSON.stringify(patients);
-  if (payload === lastSavedHash) return; // nothing changed
   setSyncStatus('syncing', 'Saving…');
   try {
-    // Upsert — insert or update the single 'data' row
+    const ts = new Date().toISOString();
     const res = await fetch(`${SUPABASE_URL}/rest/v1/patients`, {
       method: 'POST',
       headers: { ...DB_HEADERS, 'Prefer': 'resolution=merge-duplicates' },
-      body: JSON.stringify({ key: 'data', value: payload })
+      body: JSON.stringify({ key: 'data', value: payload, updated_at: ts })
     });
     if (!res.ok) throw new Error('Save failed');
     lastSavedHash = payload;
+    lastKnownTS = ts;
     setSyncStatus('ok', 'Synced ✓');
   } catch(e) {
     setSyncStatus('error', 'Save failed — check connection');
@@ -1267,6 +1267,8 @@ async function saveToCloud() {
 }
 
 function scheduleSave() { clearTimeout(saveTimer); saveTimer = setTimeout(saveToCloud, 700); }
+
+let lastKnownTS = '';
 
 // Poll every 15 seconds for changes from other computers
 setInterval(async () => {
@@ -1276,11 +1278,11 @@ setInterval(async () => {
     const rows = await res.json();
     const row = Array.isArray(rows) ? rows.find(r => r.key === 'data') : null;
     if (row && row.value) {
-      const remoteHash = row.value;
-      const localHash = JSON.stringify(patients);
-      if (remoteHash !== localHash) {
+      const remoteTS = row.updated_at || '';
+      if (remoteTS !== lastKnownTS) {
         patients = JSON.parse(row.value);
         lastSavedHash = row.value;
+        lastKnownTS = remoteTS;
         render();
         setSyncStatus('ok', 'Updated ✓');
       }
