@@ -950,7 +950,39 @@
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
+<!-- ══ PASSWORD SCREEN ══ -->
+<div id="passwordScreen" style="
+  position:fixed;inset:0;background:linear-gradient(135deg,#0f766e,#0d9488);
+  display:flex;align-items:center;justify-content:center;z-index:9999;
+">
+  <div style="
+    background:white;border-radius:20px;padding:40px 36px;width:340px;
+    box-shadow:0 24px 60px rgba(0,0,0,0.2);text-align:center;
+  ">
+    <div style="font-size:2.4rem;margin-bottom:12px">📋</div>
+    <div style="font-family:'Playfair Display',serif;font-size:1.4rem;color:#111827;margin-bottom:4px">Treatment Follow-Up</div>
+    <div style="font-size:0.78rem;color:#6b7280;margin-bottom:28px">Acorn Pediatric Dental · Staff Only</div>
+    <input
+      type="password"
+      id="pwInput"
+      placeholder="Enter password"
+      onkeydown="if(event.key==='Enter')checkPassword()"
+      style="
+        width:100%;box-sizing:border-box;padding:12px 16px;border:1.5px solid #e5e7eb;
+        border-radius:10px;font-family:'Inter',sans-serif;font-size:0.95rem;
+        outline:none;margin-bottom:10px;transition:border-color 0.15s;
+      "
+      onfocus="this.style.borderColor='#0d9488'"
+      onblur="this.style.borderColor='#e5e7eb'"
+    />
+    <div id="pwError" style="color:#ef4444;font-size:0.78rem;min-height:18px;margin-bottom:8px"></div>
+    <button onclick="checkPassword()" style="
+      width:100%;padding:12px;background:linear-gradient(135deg,#0f766e,#0d9488);
+      color:white;border:none;border-radius:10px;font-family:'Inter',sans-serif;
+      font-size:0.95rem;font-weight:600;cursor:pointer;
+    ">Sign In</button>
+  </div>
+</div>
 <header>
   <div class="header-left">
     <div class="logo">
@@ -2406,17 +2438,41 @@ function closeTCPrint() {
   document.getElementById('tcPrintOverlay').classList.remove('active');
 }
 
-// Boot
-loadFromCloud().then(() => {
-  checkDeactReminder();
-  // Wire scheduledAt on outcome set — patch into setOutcome
-  const origSetOutcome = setOutcome;
-  // scheduleNotifCheck if already enabled
-  if (localStorage.getItem('notif-time') && Notification.permission === 'granted') {
-    scheduleNotifCheck();
-    document.getElementById('notifBtn').classList.add('notif-bell-active');
+// ── Password gate ───────────────────────────────────────────
+const PW_HASH = '8e749cafbb6dd2de05bfb3e5ea5e3e4a3c6f2f8c1d9f3b7a2e4c6d8f0a2b4c6'; // sha256 placeholder — see below
+
+function checkPassword() {
+  const val = document.getElementById('pwInput').value;
+  if (val === '@cornpedsdental1161') {
+    sessionStorage.setItem('acorn-auth', '1');
+    document.getElementById('passwordScreen').style.display = 'none';
+    loadFromCloud().then(() => {
+      checkDeactReminder();
+      if (localStorage.getItem('notif-time') && Notification.permission === 'granted') {
+        scheduleNotifCheck();
+        document.getElementById('notifBtn').classList.add('notif-bell-active');
+      }
+    });
+  } else {
+    document.getElementById('pwError').textContent = 'Incorrect password. Please try again.';
+    document.getElementById('pwInput').value = '';
+    document.getElementById('pwInput').focus();
   }
-});
+}
+
+// Boot
+if (sessionStorage.getItem('acorn-auth') === '1') {
+  document.getElementById('passwordScreen').style.display = 'none';
+  loadFromCloud().then(() => {
+    checkDeactReminder();
+    if (localStorage.getItem('notif-time') && Notification.permission === 'granted') {
+      scheduleNotifCheck();
+      document.getElementById('notifBtn').classList.add('notif-bell-active');
+    }
+  });
+} else {
+  setTimeout(() => document.getElementById('pwInput').focus(), 100);
+}
 </script>
 <!-- Quick-Schedule Modal -->
 <div class="modal-overlay hidden" id="qsOverlay" onclick="if(event.target===this)closeQuickSchedule()">
