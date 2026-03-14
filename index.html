@@ -946,6 +946,171 @@
   .btn-notif-save { flex: 2; background: var(--teal); color: white; border: none; padding: 10px; border-radius: 9px; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; }
   .btn-notif-cancel { flex: 1; background: var(--bg); border: 1.5px solid var(--border); color: var(--muted); padding: 10px; border-radius: 9px; font-family: 'Inter', sans-serif; font-size: 0.85rem; cursor: pointer; }
   .notif-bell-active { color: #f59e0b; }
+
+  /* ══ RECARE SECTION ══════════════════════════════════════ */
+  .recare-section {
+    margin-top: 32px;
+  }
+  .recare-section-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px; flex-wrap: wrap; gap: 10px;
+  }
+  .recare-section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; color: var(--ink); display: flex; align-items: center; gap: 8px;
+  }
+  .recare-count-pill {
+    font-size: 0.68rem; font-weight: 700; padding: 3px 10px;
+    border-radius: 20px; background: #e0f2fe; color: #0369a1;
+    border: 1px solid #bae6fd; letter-spacing: 0.04em;
+  }
+  .recare-section-sub {
+    font-size: 0.75rem; color: var(--muted); margin-top: 2px;
+  }
+  .recare-divider {
+    border: none; border-top: 1.5px solid var(--border); margin: 0 0 16px;
+  }
+  .patient-card.recare { border-left-color: #0ea5e9; }
+  .patient-card.recare.s-overdue { border-left-color: var(--rose-mid); }
+  .patient-card.recare.s-today   { border-left-color: var(--amber-mid); }
+  .patient-card.recare.s-upcoming { border-left-color: #0ea5e9; }
+  .recare-type-badge {
+    font-size: 0.6rem; font-weight: 700; padding: 2px 8px;
+    border-radius: 20px; background: #e0f2fe; color: #0369a1;
+    border: 1px solid #bae6fd; text-transform: uppercase; letter-spacing: 0.07em;
+    white-space: nowrap;
+  }
+  .treatment-type-badge {
+    font-size: 0.6rem; font-weight: 700; padding: 2px 8px;
+    border-radius: 20px; background: var(--violet-light); color: var(--violet);
+    border: 1px solid #d8b4fe; text-transform: uppercase; letter-spacing: 0.07em;
+    white-space: nowrap;
+  }
+
+  /* ══ MORNING PROMPT ══════════════════════════════════════ */
+  .morning-prompt {
+    background: linear-gradient(120deg, #1e3a5f 0%, #0f4c75 100%);
+    border-radius: var(--r); padding: 18px 24px;
+    margin-bottom: 18px; display: flex; align-items: center;
+    justify-content: space-between; gap: 16px;
+    box-shadow: 0 4px 16px rgba(15,76,117,0.25);
+  }
+  .morning-prompt-left { display: flex; align-items: center; gap: 14px; }
+  .morning-prompt-icon { font-size: 1.6rem; }
+  .morning-prompt-text { color: white; }
+  .morning-prompt-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 3px; }
+  .morning-prompt-sub { font-size: 0.74rem; opacity: 0.7; }
+  .morning-prompt-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+  .mp-pill {
+    padding: 5px 12px; border-radius: 20px; font-size: 0.74rem; font-weight: 600;
+    white-space: nowrap; cursor: pointer; border: none; transition: all 0.15s;
+  }
+  .mp-pill-tx { background: rgba(167,139,250,0.25); color: #c4b5fd; border: 1px solid rgba(167,139,250,0.3); }
+  .mp-pill-tx:hover { background: rgba(167,139,250,0.4); }
+  .mp-pill-rc { background: rgba(56,189,248,0.2); color: #7dd3fc; border: 1px solid rgba(56,189,248,0.25); }
+  .mp-pill-rc:hover { background: rgba(56,189,248,0.35); }
+  .mp-pill-dismiss { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.1); font-size: 0.68rem; }
+  .mp-pill-dismiss:hover { background: rgba(255,255,255,0.14); color: rgba(255,255,255,0.7); }
+
+  /* ══ DENTICON UPLOAD MODAL ═══════════════════════════════ */
+  .denticon-modal {
+    background: white; border-radius: 18px; padding: 0;
+    width: 580px; max-width: 96vw; max-height: 88vh;
+    box-shadow: var(--shadow-lg); position: relative;
+    animation: popUp 0.22s cubic-bezier(0.34,1.56,0.64,1);
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .denticon-modal-header {
+    background: linear-gradient(120deg, #1e3a5f 0%, #0f4c75 100%);
+    padding: 20px 28px 16px; flex-shrink: 0; position: relative;
+  }
+  .denticon-modal-tag { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(255,255,255,0.55); margin-bottom: 4px; }
+  .denticon-modal-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: white; }
+  .denticon-modal-sub { font-size: 0.74rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+  .denticon-modal-body { padding: 22px 28px; overflow-y: auto; flex: 1; }
+
+  .denticon-upload-zone {
+    border: 2px dashed var(--border); border-radius: 12px;
+    padding: 36px 24px; text-align: center; cursor: pointer;
+    transition: all 0.18s; background: var(--bg);
+    margin-bottom: 16px;
+  }
+  .denticon-upload-zone:hover, .denticon-upload-zone.drag-over {
+    border-color: var(--teal); background: var(--teal-light);
+  }
+  .denticon-upload-icon { font-size: 2.4rem; margin-bottom: 10px; }
+  .denticon-upload-label { font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .denticon-upload-hint { font-size: 0.75rem; color: var(--muted); }
+  .denticon-upload-input { display: none; }
+
+  .denticon-parsing { text-align: center; padding: 28px; color: var(--muted); font-size: 0.86rem; }
+  .denticon-parsing-spinner { font-size: 1.8rem; animation: spin 1s linear infinite; display: block; margin-bottom: 10px; }
+  @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+
+  .denticon-results { display: flex; flex-direction: column; gap: 10px; }
+  .denticon-result-section-title {
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--muted); margin: 8px 0 6px;
+    padding-bottom: 5px; border-bottom: 1.5px solid var(--border);
+  }
+  .denticon-result-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 14px; border-radius: 10px;
+    border: 1px solid var(--border); background: white;
+    font-size: 0.84rem;
+  }
+  .denticon-result-row.already-on { background: var(--teal-light); border-color: #99e6db; opacity: 0.75; }
+  .denticon-result-row.not-on { background: #fffbeb; border-color: #fde68a; }
+  .denticon-result-name { font-weight: 600; color: var(--ink); flex: 1; }
+  .denticon-result-status { font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
+  .denticon-status-ok { background: var(--teal-light); color: var(--teal); border: 1px solid #99e6db; }
+  .denticon-status-missing { background: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+  .btn-denticon-add {
+    background: var(--ink); color: white; border: none;
+    padding: 6px 14px; border-radius: 8px; font-family: 'Inter', sans-serif;
+    font-size: 0.76rem; font-weight: 600; cursor: pointer; white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .btn-denticon-add:hover { background: var(--teal); }
+  .btn-denticon-add.added { background: var(--teal); cursor: default; }
+
+  .denticon-summary {
+    background: var(--bg); border-radius: 10px; padding: 12px 16px;
+    margin-bottom: 16px; font-size: 0.82rem; color: var(--ink);
+    display: flex; gap: 18px; flex-wrap: wrap;
+  }
+  .denticon-summary-item { display: flex; align-items: center; gap: 6px; }
+  .denticon-summary-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+  .denticon-modal-footer {
+    padding: 14px 28px; border-top: 1px solid var(--border);
+    display: flex; justify-content: flex-end; gap: 10px; flex-shrink: 0;
+  }
+  .btn-denticon-close {
+    background: var(--bg); border: 1.5px solid var(--border); color: var(--muted);
+    padding: 9px 20px; border-radius: 9px; font-family: 'Inter', sans-serif;
+    font-size: 0.84rem; font-weight: 500; cursor: pointer; transition: all 0.15s;
+  }
+  .btn-denticon-close:hover { color: var(--ink); border-color: var(--muted); }
+  .btn-denticon-reset {
+    background: none; border: none; color: var(--muted); font-family: 'Inter', sans-serif;
+    font-size: 0.78rem; cursor: pointer; text-decoration: underline;
+    text-underline-offset: 3px; padding: 9px 4px;
+  }
+  .btn-denticon-reset:hover { color: var(--ink); }
+
+  /* Type picker inside denticon add flow */
+  .denticon-type-picker {
+    display: flex; gap: 8px; margin-top: 6px;
+  }
+  .btn-type-pick {
+    flex: 1; padding: 8px; border-radius: 9px; border: 2px solid var(--border);
+    background: white; font-family: 'Inter', sans-serif; font-size: 0.8rem;
+    font-weight: 600; cursor: pointer; transition: all 0.15s; text-align: center;
+  }
+  .btn-type-pick:hover { border-color: var(--teal); color: var(--teal); }
+  .btn-type-pick.treatment { border-color: var(--violet); background: var(--violet-light); color: var(--violet); }
+  .btn-type-pick.recare { border-color: #0ea5e9; background: #e0f2fe; color: #0369a1; }
 </style>
 </head>
 <body>
@@ -976,12 +1141,13 @@
     <div class="header-date" id="todayBadge"></div>
   </div>
   <div class="header-right">
-    <button class="hbtn hbtn-ghost" onclick="openHelp()">? How to Use</button>
+    <button class="hbtn hbtn-ghost" onclick="openHelp()">📖 Staff Guide</button>
     <button class="hbtn hbtn-ghost" onclick="openPrint()">🖨 Call Sheet</button>
     <button class="hbtn hbtn-ghost" onclick="openMonthlyReport()">📊 Monthly Report</button>
     <button class="hbtn hbtn-ghost" onclick="exportCSV()">⬇ Export CSV</button>
     <button class="hbtn hbtn-ghost" id="notifBtn" onclick="openNotifSettings()" title="Reminder Settings">🔔</button>
     <button class="hbtn hbtn-ghost" onclick="openEOD()">📋 End-of-Day</button>
+    <button class="hbtn hbtn-ghost" onclick="openDenticonUpload()">📄 Denticon Report</button>
     <button class="hbtn hbtn-green" onclick="openQuickSchedule()">📞 Patient Scheduling?</button>
     <button class="hbtn hbtn-teal" onclick="openQuickAdd()">+ Log Patient</button>
     <div class="sync-pill">
@@ -1002,6 +1168,22 @@
 
 <!-- ══ MAIN ══ -->
 <div class="main">
+
+  <!-- Morning Prompt (shown on load if yesterday has uncontacted patients) -->
+  <div class="morning-prompt hidden" id="morningPrompt">
+    <div class="morning-prompt-left">
+      <div class="morning-prompt-icon">☀️</div>
+      <div class="morning-prompt-text">
+        <div class="morning-prompt-title" id="morningPromptTitle">Good morning — you have follow-ups from yesterday</div>
+        <div class="morning-prompt-sub" id="morningPromptSub"></div>
+      </div>
+    </div>
+    <div class="morning-prompt-pills">
+      <button class="mp-pill mp-pill-tx" onclick="setFilter('overdue',document.getElementById('fb-overdue'))">💜 View Treatment</button>
+      <button class="mp-pill mp-pill-rc" onclick="scrollToRecare()">🦷 View Recare</button>
+      <button class="mp-pill mp-pill-dismiss" onclick="document.getElementById('morningPrompt').classList.add('hidden')">Dismiss</button>
+    </div>
+  </div>
 
   <!-- Quick-Add Banner -->
   <div class="quickadd-banner" onclick="openQuickAdd()">
@@ -1091,7 +1273,13 @@
       <div class="field"><label>Child's Last Name</label><input type="text" id="addChildLast" placeholder="Last" /></div>
       <div class="field"><label>Phone</label><input type="tel" id="addPhone" placeholder="(555) 000-0000" oninput="formatPhone(this)" /></div>
       <div class="field"><label>Treatment Plan Date</label><input type="date" id="addDate" /></div>
-      <div class="field"><label>Treatment Description</label><input type="text" id="addValue" placeholder="e.g. Crown #14" /></div>
+      <div class="field"><label>What didn't they schedule? <span style="color:var(--rose)">*</span></label>
+        <select id="addType" class="qa-select" onchange="updateAddReasonOptions()" style="width:100%;padding:9px 11px;border:1.5px solid var(--border);border-radius:9px;font-family:'Inter',sans-serif;font-size:0.88rem;background:var(--bg);color:var(--ink)">
+          <option value="treatment">💜 Treatment (fixing teeth)</option>
+          <option value="recare">🦷 Recare (cleaning / check-up)</option>
+        </select>
+      </div>
+      <div class="field"><label>Description <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="text" id="addValue" placeholder="e.g. Crown #14" /></div>
       <div class="field"><label>Reason Didn't Book</label>
         <select id="addReason" class="qa-select" onchange="toggleReasonNote('addReasonNote','addReason')" style="width:100%;padding:9px 11px;border:1.5px solid var(--border);border-radius:9px;font-family:'Inter',sans-serif;font-size:0.88rem;background:var(--bg);color:var(--ink)"></select>
       </div>
@@ -1115,6 +1303,30 @@
 
   <div class="patient-list" id="patientList">
     <div class="empty-state"><div class="empty-icon">⏳</div><p>Loading…</p></div>
+  </div>
+
+  <!-- Recare Section -->
+  <div class="recare-section" id="recareSection">
+    <div class="recare-section-header">
+      <div>
+        <div class="recare-section-title">
+          🦷 Recare Follow-Ups
+          <span class="recare-count-pill" id="recareCountPill">0</span>
+        </div>
+        <div class="recare-section-sub">Patients who left without scheduling their cleaning or check-up</div>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <button class="filter-btn" id="rfb-all" onclick="setRecareFilter('all',this)" style="font-size:0.74rem;padding:6px 12px">All Active</button>
+        <button class="filter-btn" id="rfb-overdue" onclick="setRecareFilter('overdue',this)" style="font-size:0.74rem;padding:6px 12px">⚠ Overdue</button>
+        <button class="filter-btn" id="rfb-today" onclick="setRecareFilter('today',this)" style="font-size:0.74rem;padding:6px 12px">Today</button>
+        <button class="filter-btn" id="rfb-upcoming" onclick="setRecareFilter('upcoming',this)" style="font-size:0.74rem;padding:6px 12px">Upcoming</button>
+        <button class="filter-btn" id="rfb-closed" onclick="setRecareFilter('closed',this)" style="font-size:0.74rem;padding:6px 12px">Closed</button>
+      </div>
+    </div>
+    <hr class="recare-divider">
+    <div class="patient-list" id="recareList">
+      <div class="empty-state"><div class="empty-icon">⏳</div><p>Loading…</p></div>
+    </div>
   </div>
 </div>
 
@@ -1176,6 +1388,11 @@ const STEPS = [
   { label: '1 Day', days: 1 },
   { label: '3 Days', days: 3 },
   { label: '2 Weeks', days: 14 },
+];
+
+const RECARE_STEPS = [
+  { label: '1 Day', days: 1 },
+  { label: '1 Week', days: 7 },
 ];
 
 const OUTCOMES = [
@@ -1447,8 +1664,9 @@ function getStepDueDate(txDate, stepDays) {
 
 function getStepStatus(p, i) {
   if (p.steps[i]) return 'done';
+  const steps = p.type === 'recare' ? RECARE_STEPS : STEPS;
   const txDate = new Date(p.date + 'T00:00:00');
-  const target = getStepDueDate(txDate, STEPS[i].days);
+  const target = getStepDueDate(txDate, steps[i].days);
   const today = new Date(); today.setHours(0,0,0,0);
   const diff = Math.floor((target - today) / 86400000);
   return diff < 0 ? 'overdue' : diff === 0 ? 'today' : 'upcoming';
@@ -1456,6 +1674,7 @@ function getStepStatus(p, i) {
 
 function isGoneCold(p) {
   if (p.closed || (p.outcome && OUTCOME_MAP[p.outcome]?.closes)) return false;
+  if (p.type === 'recare') return false; // Recare doesn't go cold
   return p.steps.every(s => s) && !p.coldClosedAt;
 }
 
@@ -1463,13 +1682,13 @@ function getCardStatus(p) {
   if (p.closed) return 'closed';
   if (p.outcome && OUTCOME_MAP[p.outcome]?.closes) return 'closed';
   if (isGoneCold(p)) {
-    // Auto-close after 30 days cold
     const coldSince = new Date(p.coldSinceAt || p.date + 'T00:00:00');
     const daysCold = Math.floor((new Date() - coldSince) / 86400000);
     if (daysCold >= 30) return 'closed';
     return 'cold';
   }
-  for (let i = 0; i < 3; i++) {
+  const stepCount = p.type === 'recare' ? 2 : 3;
+  for (let i = 0; i < stepCount; i++) {
     if (!p.steps[i]) {
       const s = getStepStatus(p, i);
       if (s === 'overdue') return 'overdue';
@@ -1495,18 +1714,15 @@ const REASONS = [
   { key: 'other',      label: '💬 Other' },
 ];
 
-// Populate the static manual-add dropdown (can't use template literals in HTML for JS arrays)
-document.getElementById('addReason').innerHTML = REASONS.map(r => `<option value="${r.key}">${r.label}</option>`).join('');
+const RECARE_REASONS = [
+  { key: '',           label: '— Select a reason (optional) —' },
+  { key: 'scheduling', label: '📅 Scheduling conflict' },
+  { key: 'wait',       label: '⏳ Wants to wait / not ready' },
+  { key: 'cost',       label: '💰 Cost / insurance concern' },
+  { key: 'other',      label: '💬 Other' },
+];
 
-function newPatient(name, phone, date, value, childName, reason, reasonNote) {
-  return { id: Date.now(), name, phone: phone||'', date: date||todayStr(), value: value||'', childName: childName||'', reason: reason||'', reasonNote: reasonNote||'', steps:[false,false,false], outcome:null, closed:false, notes:'', showNote:false };
-}
-
-function isDuplicate(fullName) {
-  return patients.some(p => p.name.toLowerCase() === fullName.toLowerCase() && !p.closed);
-}
-
-// ── Text message scripts ───────────────────────────────────
+// Text scripts — Treatment
 const TEXT_SCRIPTS = [
   (child) => `Hi! This is Aliyah from Acorn Pediatric Dental. Dr. Jason wanted me to reach out — we'd love to get ${child} scheduled for their treatment. Feel free to reply here or give us a call at 732-852-9200 😊`,
   (child) => `Hi! Aliyah from Acorn Pediatric Dental here. We still have availability to get ${child} taken care of — just reply or call us at 732-852-9200 and we'll get something on the calendar!`,
@@ -1514,8 +1730,38 @@ const TEXT_SCRIPTS = [
   (child) => `Hi! Aliyah from Acorn Pediatric Dental here. We haven't heard from you in a while and just wanted to check in on ${child}. Dr. Jason's schedule has some openings if you'd like to revisit treatment — no pressure at all. You can reach us at 732-852-9200 anytime 😊`,
 ];
 
+// Text scripts — Recare
+const RECARE_TEXT_SCRIPTS = [
+  (child) => `Hi! This is Aliyah from Acorn Pediatric Dental. We noticed ${child} left yesterday without scheduling their cleaning — we'd love to get them in! Feel free to reply here or call us at 732-852-9200 😊`,
+  (child) => `Hi! Aliyah from Acorn Pediatric Dental here. Just following up — we still have some openings to get ${child}'s cleaning scheduled. Give us a call or reply here and we'll get it on the calendar! 732-852-9200 😊`,
+];
+
+let recareFilter = 'all';
+
+// Populate the static manual-add dropdowns
+document.getElementById('addReason').innerHTML = REASONS.map(r => `<option value="${r.key}">${r.label}</option>`).join('');
+
+function updateAddReasonOptions() {
+  const type = document.getElementById('addType')?.value || 'treatment';
+  const reasons = type === 'recare' ? RECARE_REASONS : REASONS;
+  document.getElementById('addReason').innerHTML = reasons.map(r => `<option value="${r.key}">${r.label}</option>`).join('');
+  const descLabel = document.querySelector('#addValue')?.closest('.field')?.querySelector('label');
+  if (descLabel) descLabel.textContent = type === 'recare' ? 'Description (optional)' : 'Description (optional)';
+}
+
+function newPatient(name, phone, date, value, childName, reason, reasonNote, type) {
+  const t = type || 'treatment';
+  const stepCount = t === 'recare' ? 2 : 3;
+  return { id: Date.now(), name, phone: phone||'', date: date||todayStr(), value: value||'', childName: childName||'', reason: reason||'', reasonNote: reasonNote||'', steps: Array(stepCount).fill(false), outcome:null, closed:false, notes:'', showNote:false, type: t };
+}
+
+function isDuplicate(fullName) {
+  return patients.some(p => p.name.toLowerCase() === fullName.toLowerCase() && !p.closed);
+}
+
 function getTextScript(p, stepIdx) {
   const child = p.childName?.trim() || 'your child';
+  if (p.type === 'recare') return RECARE_TEXT_SCRIPTS[Math.min(stepIdx, RECARE_TEXT_SCRIPTS.length - 1)](child);
   return TEXT_SCRIPTS[stepIdx](child);
 }
 
@@ -1523,15 +1769,13 @@ function copyText(id, stepIdx, btnEl) {
   const p = patients.find(x => x.id === id);
   if (!p) return;
   const text = getTextScript(p, stepIdx);
+  const steps = p.type === 'recare' ? RECARE_STEPS : STEPS;
+  const stepLabel = steps[stepIdx]?.label || `Step ${stepIdx+1}`;
   navigator.clipboard.writeText(text).then(() => {
     btnEl.textContent = '✓ Copied!';
     btnEl.classList.add('copied');
-    setTimeout(() => {
-      btnEl.textContent = `📱 Copy ${STEPS[stepIdx].label} Text`;
-      btnEl.classList.remove('copied');
-    }, 2000);
+    setTimeout(() => { btnEl.textContent = `📱 Copy ${stepLabel} Text`; btnEl.classList.remove('copied'); }, 2000);
   }).catch(() => {
-    // Fallback for browsers that block clipboard
     const ta = document.createElement('textarea');
     ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
     document.body.appendChild(ta); ta.select();
@@ -1539,7 +1783,7 @@ function copyText(id, stepIdx, btnEl) {
     document.body.removeChild(ta);
     btnEl.textContent = '✓ Copied!';
     btnEl.classList.add('copied');
-    setTimeout(() => { btnEl.textContent = `📱 Copy ${STEPS[stepIdx].label} Text`; btnEl.classList.remove('copied'); }, 2000);
+    setTimeout(() => { btnEl.textContent = `📱 Copy ${stepLabel} Text`; btnEl.classList.remove('copied'); }, 2000);
   });
 }
 
@@ -1555,9 +1799,10 @@ function addPatient() {
   if (isDuplicate(fullName)) {
     if (!confirm(`${fullName} is already on the active list. Add them again anyway?`)) return;
   }
+  const type = document.getElementById('addType')?.value || 'treatment';
   const reason = document.getElementById('addReason')?.value || '';
   const reasonNote = document.getElementById('addReasonNoteInput')?.value.trim() || '';
-  patients.unshift(newPatient(fullName, phone, date, value, childFirst, reason, reasonNote));
+  patients.unshift(newPatient(fullName, phone, date, value, childFirst, reason, reasonNote, type));
   ['addChildFirst','addChildLast','addPhone','addValue'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('addReason').value = '';
   document.getElementById('addReasonNoteInput').value = '';
@@ -1569,11 +1814,10 @@ function toggleStep(id, i) {
   const p = patients.find(x => x.id === id);
   if (!p) return;
   p.steps[i] = !p.steps[i];
-  // Stamp when patient first goes cold (all steps done)
-  if (p.steps.every(s => s) && !p.coldSinceAt) {
+  // Stamp when treatment patient first goes cold (all steps done)
+  if (p.type !== 'recare' && p.steps.every(s => s) && !p.coldSinceAt) {
     p.coldSinceAt = new Date().toISOString();
   }
-  // Clear stamp if a step is unchecked
   if (!p.steps.every(s => s)) p.coldSinceAt = null;
   render(); scheduleSave();
 }
@@ -1599,7 +1843,8 @@ function setOutcome(id, key) {
 
   // Auto-complete the current open step for attempt outcomes
   if (STEP_COMPLETE_OUTCOMES.has(key)) {
-    for (let i = 0; i < 3; i++) {
+    const stepCount = p.type === 'recare' ? 2 : 3;
+    for (let i = 0; i < stepCount; i++) {
       if (!p.steps[i]) {
         p.steps[i] = true;
         break;
@@ -1646,7 +1891,7 @@ function setFilter(f, el) {
 function render() {
   const search = document.getElementById('searchBox').value.toLowerCase();
 
-  // Outcome strip
+  // Outcome strip — all patients
   const mp = thisMonth();
   document.getElementById('os-scheduled').textContent = mp.filter(p => p.outcome === 'scheduled').length;
   document.getElementById('os-voicemail').textContent = mp.filter(p => p.outcome === 'voicemail').length;
@@ -1655,8 +1900,10 @@ function render() {
   document.getElementById('os-declined').textContent  = mp.filter(p => p.outcome === 'declined-cost' || p.outcome === 'declined-interest').length;
   document.getElementById('os-elsewhere').textContent = mp.filter(p => p.outcome === 'elsewhere').length;
 
-  // Active stats
-  const active = patients.filter(p => { const s = getCardStatus(p); return s !== 'closed'; });
+  // Active stats — treatment only for main counters
+  const txPatients = patients.filter(p => (p.type || 'treatment') === 'treatment');
+  const rcPatients = patients.filter(p => p.type === 'recare');
+  const active = txPatients.filter(p => { const s = getCardStatus(p); return s !== 'closed'; });
   document.getElementById('statOverdue').textContent  = active.filter(p => getCardStatus(p) === 'overdue').length;
   document.getElementById('statToday').textContent    = active.filter(p => getCardStatus(p) === 'today').length;
   document.getElementById('statUpcoming').textContent = active.filter(p => getCardStatus(p) === 'upcoming').length;
@@ -1664,8 +1911,15 @@ function render() {
   updateConversionStats();
   renderTC();
 
-  // Filter
-  let filtered = patients.filter(p => {
+  // Recare count pill
+  const rcActive = rcPatients.filter(p => getCardStatus(p) !== 'closed');
+  document.getElementById('recareCountPill').textContent = rcActive.length;
+
+  // Morning prompt
+  checkMorningPrompt();
+
+  // ── Treatment list ──────────────────────────────────────
+  let filtered = txPatients.filter(p => {
     if (search && !p.name.toLowerCase().includes(search)) return false;
     const s = getCardStatus(p);
     if (activeFilter === 'all')    return s !== 'closed' && s !== 'cold';
@@ -1676,93 +1930,177 @@ function render() {
 
   const list = document.getElementById('patientList');
   if (filtered.length === 0) {
-    list.innerHTML = `<div class="empty-state"><div class="empty-icon">📋</div><p>${patients.length === 0 ? 'No patients yet — Tap the red banner above to log one!' : 'No patients match this filter.'}</p></div>`;
-    return;
+    list.innerHTML = `<div class="empty-state"><div class="empty-icon">📋</div><p>${txPatients.length === 0 ? 'No treatment patients yet — Tap the red banner above to log one!' : 'No treatment patients match this filter.'}</p></div>`;
+  } else {
+    list.innerHTML = filtered.map(p => buildPatientCard(p)).join('');
   }
+
+  // ── Recare list ─────────────────────────────────────────
+  let rcFiltered = rcPatients.filter(p => {
+    if (search && !p.name.toLowerCase().includes(search)) return false;
+    const s = getCardStatus(p);
+    if (recareFilter === 'all')    return s !== 'closed';
+    if (recareFilter === 'closed') return s === 'closed';
+    return s === recareFilter;
+  });
+
+  // Sync active filter button for recare
+  document.querySelectorAll('[id^="rfb-"]').forEach(b => b.classList.remove('active'));
+  document.getElementById(`rfb-${recareFilter}`)?.classList.add('active');
+
+  const rcList = document.getElementById('recareList');
+  if (rcFiltered.length === 0) {
+    rcList.innerHTML = `<div class="empty-state"><div class="empty-icon">🦷</div><p>${rcPatients.length === 0 ? 'No recare patients yet — log a cleaning no-show using the red banner.' : 'No recare patients match this filter.'}</p></div>`;
+  } else {
+    rcList.innerHTML = rcFiltered.map(p => buildPatientCard(p)).join('');
+  }
+}
+
+}
+
+// ── Build Patient Card ─────────────────────────────────────
+function buildPatientCard(p) {
+  const isRecare = p.type === 'recare';
+  const steps = isRecare ? RECARE_STEPS : STEPS;
+  const reasonList = isRecare ? RECARE_REASONS : REASONS;
+  const status = getCardStatus(p);
+  const isCold = status === 'cold';
 
   const chipMap   = { overdue:'chip-overdue', today:'chip-today', upcoming:'chip-upcoming', cold:'chip-cold' };
   const chipLabel = { overdue:'Overdue', today:'Due Today', upcoming:'Upcoming', cold:'🧊 Gone Cold', closed:'' };
+  const chip = status !== 'closed' ? `<span class="status-chip ${chipMap[status]||''}">${chipLabel[status]||''}</span>` : '';
 
-  list.innerHTML = filtered.map(p => {
-    const status  = getCardStatus(p);
-    const isCold  = status === 'cold';
-    const chip    = status !== 'closed' ? `<span class="status-chip ${chipMap[status]||''}">${chipLabel[status]||''}</span>` : '';
-    const txDate  = new Date(p.date + 'T00:00:00');
-    const dateStr = txDate.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+  const typeBadge = isRecare
+    ? `<span class="recare-type-badge">🦷 Recare</span>`
+    : `<span class="treatment-type-badge">💜 Treatment</span>`;
 
-    // Cold countdown
-    let coldCountdown = '';
-    if (isCold && p.coldSinceAt) {
-      const daysCold = Math.floor((new Date() - new Date(p.coldSinceAt)) / 86400000);
-      const daysLeft = 30 - daysCold;
-      coldCountdown = `<div class="cold-countdown">Auto-closes in ${daysLeft} day${daysLeft !== 1 ? 's' : ''} · Re-engagement attempt below</div>`;
-    }
+  const txDate  = new Date(p.date + 'T00:00:00');
+  const dateStr = txDate.toLocaleDateString('en-US', { month:'short', day:'numeric' });
 
-    const stepsHTML = STEPS.map((step, i) => {
-      const s = p.steps[i] ? 'done' : getStepStatus(p, i);
-      const dc = s === 'done' ? 'done' : s === 'today' ? 'due-now' : s === 'overdue' ? 'overdue-dot' : '';
-      const due = getStepDueDate(txDate, step.days);
-      const dueStr = due.toLocaleDateString('en-US', { month:'short', day:'numeric' });
-      const conn = i < 2 ? `<div class="step-conn${p.steps[i]?' done':''}"></div>` : '';
-      return `<div class="step" onclick="toggleStep(${p.id},${i})" title="${p.steps[i]?'Unmark':'Mark'}: ${step.label}">
-        <div class="step-dot ${dc}">${p.steps[i]?'✓':step.label[0]}</div>
-        <div class="step-label">${step.label}<br><span style="opacity:.7">${dueStr}</span></div>
-      </div>${conn}`;
-    }).join('');
+  let coldCountdown = '';
+  if (isCold && p.coldSinceAt) {
+    const daysCold = Math.floor((new Date() - new Date(p.coldSinceAt)) / 86400000);
+    const daysLeft = 30 - daysCold;
+    coldCountdown = `<div class="cold-countdown">Auto-closes in ${daysLeft} day${daysLeft !== 1 ? 's' : ''} · Re-engagement attempt below</div>`;
+  }
 
-    // Copy text buttons — only show for incomplete steps (or cold re-engagement)
-    let copyBtns = '';
-    if (isCold) {
-      copyBtns = `<button class="btn-copy-text btn-copy-cold" onclick="copyText(${p.id},3,this)">📱 Copy Re-Engagement Text</button>`;
-    } else {
-      copyBtns = STEPS.map((step, i) => {
-        if (p.steps[i]) return '';
-        const s = getStepStatus(p, i);
-        const isOverdue = s === 'overdue';
-        return `<button class="btn-copy-text${isOverdue?' step-overdue':''}" onclick="copyText(${p.id},${i},this)">📱 Copy ${step.label} Text</button>`;
-      }).filter(Boolean).join('');
-    }
-
-    const copyRow = (copyBtns && !p.closed) ? `<div class="copy-text-btns"><span class="copy-lbl">${isCold ? 'Re-engage:' : 'Send Text:'}</span>${copyBtns}</div>` : '';
-
-    const outcomeBtns = OUTCOMES.map(o => {
-      const isSelected = p.outcome === o.key;
-      const baseClass = o.key === 'scheduled' ? ' btn-scheduled' : '';
-      return `<button class="outcome-btn${baseClass}${isSelected?' selected-'+o.key:''}" onclick="setOutcome(${p.id},'${o.key}')">${o.label}</button>`;
-    }).join('');
-
-    const closedBanner = p.outcome && OUTCOME_MAP[p.outcome]?.closes
-      ? `<span class="outcome-banner ob-${p.outcome}">${OUTCOME_MAP[p.outcome].label}</span>` : '';
-
-    const notesHTML = p.showNote
-      ? `<textarea class="notes-area" placeholder="Call notes…" onchange="updateNote(${p.id},this.value)">${p.notes||''}</textarea>`
-      : (p.notes ? `<div class="notes-display">💬 ${p.notes}</div>` : '');
-
-    return `<div class="patient-card s-${status}">
-      <div class="card-main">
-        <div class="patient-name">${p.name}</div>
-        ${chip}
-        ${closedBanner}
-        ${coldCountdown}
-        ${p.phone ? `<div class="patient-phone">📞 ${p.phone}</div>` : ''}
-        <div class="patient-meta">Treatment: ${dateStr}${p.childName?' · <strong>'+p.childName+'</strong>':''}${p.value?' · <em>'+p.value+'</em>':''}</div>
-        ${p.reason ? `<div class="patient-reason">${REASONS.find(r=>r.key===p.reason)?.label||p.reason}${p.reasonNote?' — '+p.reasonNote:''}</div>` : ''}
-        ${p.planSentAt ? `<div class="plan-sent-badge">📋 Treatment Plan Sent by TC</div>` : ''}
-        <div class="followup-steps">${stepsHTML}</div>
-      </div>
-      ${copyRow}
-      <div class="card-bottom">
-        <div class="outcome-label">Outcome</div>
-        <div class="outcome-btns">${outcomeBtns}</div>
-        <div class="card-actions">
-          <button class="btn-note" onclick="toggleNote(${p.id})">📝 Notes</button>
-          <button class="btn-dismiss" onclick="dismiss(${p.id})" title="Remove">✕</button>
-        </div>
-      </div>
-      ${notesHTML ? `<div style="padding:0 18px 12px">${notesHTML}</div>` : ''}
-    </div>`;
+  const stepsHTML = steps.map((step, i) => {
+    const s = p.steps[i] ? 'done' : getStepStatus(p, i);
+    const dc = s === 'done' ? 'done' : s === 'today' ? 'due-now' : s === 'overdue' ? 'overdue-dot' : '';
+    const due = getStepDueDate(txDate, step.days);
+    const dueStr = due.toLocaleDateString('en-US', { month:'short', day:'numeric' });
+    const conn = i < steps.length - 1 ? `<div class="step-conn${p.steps[i]?' done':''}"></div>` : '';
+    return `<div class="step" onclick="toggleStep(${p.id},${i})" title="${p.steps[i]?'Unmark':'Mark'}: ${step.label}">
+      <div class="step-dot ${dc}">${p.steps[i]?'✓':step.label[0]}</div>
+      <div class="step-label">${step.label}<br><span style="opacity:.7">${dueStr}</span></div>
+    </div>${conn}`;
   }).join('');
+
+  let copyBtns = '';
+  if (isCold) {
+    copyBtns = `<button class="btn-copy-text btn-copy-cold" onclick="copyText(${p.id},3,this)">📱 Copy Re-Engagement Text</button>`;
+  } else {
+    copyBtns = steps.map((step, i) => {
+      if (p.steps[i]) return '';
+      const s = getStepStatus(p, i);
+      const isOverdue = s === 'overdue';
+      return `<button class="btn-copy-text${isOverdue?' step-overdue':''}" onclick="copyText(${p.id},${i},this)">📱 Copy ${step.label} Text</button>`;
+    }).filter(Boolean).join('');
+  }
+
+  const copyRow = (copyBtns && !p.closed) ? `<div class="copy-text-btns"><span class="copy-lbl">${isCold ? 'Re-engage:' : 'Send Text:'}</span>${copyBtns}</div>` : '';
+
+  const outcomeBtns = OUTCOMES.map(o => {
+    const isSelected = p.outcome === o.key;
+    const baseClass = o.key === 'scheduled' ? ' btn-scheduled' : '';
+    return `<button class="outcome-btn${baseClass}${isSelected?' selected-'+o.key:''}" onclick="setOutcome(${p.id},'${o.key}')">${o.label}</button>`;
+  }).join('');
+
+  const closedBanner = p.outcome && OUTCOME_MAP[p.outcome]?.closes
+    ? `<span class="outcome-banner ob-${p.outcome}">${OUTCOME_MAP[p.outcome].label}</span>` : '';
+
+  const notesHTML = p.showNote
+    ? `<textarea class="notes-area" placeholder="Call notes…" onchange="updateNote(${p.id},this.value)">${p.notes||''}</textarea>`
+    : (p.notes ? `<div class="notes-display">💬 ${p.notes}</div>` : '');
+
+  const metaLabel = isRecare ? 'Recare' : 'Treatment';
+  const reasonLabel = reasonList.find(r => r.key === p.reason)?.label || p.reason;
+
+  return `<div class="patient-card${isRecare?' recare':''} s-${status}">
+    <div class="card-main">
+      <div class="patient-name">${p.name}</div>
+      ${typeBadge}
+      ${chip}
+      ${closedBanner}
+      ${coldCountdown}
+      ${p.phone ? `<div class="patient-phone">📞 ${p.phone}</div>` : ''}
+      <div class="patient-meta">${metaLabel}: ${dateStr}${p.childName?' · <strong>'+p.childName+'</strong>':''}${p.value?' · <em>'+p.value+'</em>':''}</div>
+      ${p.reason ? `<div class="patient-reason">${reasonLabel}${p.reasonNote?' — '+p.reasonNote:''}</div>` : ''}
+      ${p.planSentAt ? `<div class="plan-sent-badge">📋 Treatment Plan Sent by TC</div>` : ''}
+      <div class="followup-steps">${stepsHTML}</div>
+    </div>
+    ${copyRow}
+    <div class="card-bottom">
+      <div class="outcome-label">Outcome</div>
+      <div class="outcome-btns">${outcomeBtns}</div>
+      <div class="card-actions">
+        <button class="btn-note" onclick="toggleNote(${p.id})">📝 Notes</button>
+        <button class="btn-dismiss" onclick="dismiss(${p.id})" title="Remove">✕</button>
+      </div>
+    </div>
+    ${notesHTML ? `<div style="padding:0 18px 12px">${notesHTML}</div>` : ''}
+  </div>`;
 }
+
+// ── Recare filter ──────────────────────────────────────────
+function setRecareFilter(f, el) {
+  recareFilter = f;
+  render();
+}
+
+// ── Scroll to recare ───────────────────────────────────────
+function scrollToRecare() {
+  document.getElementById('recareSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── Morning prompt ─────────────────────────────────────────
+function checkMorningPrompt() {
+  const prompt = document.getElementById('morningPrompt');
+  if (!prompt) return;
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yStr = yesterday.toISOString().split('T')[0];
+
+  const txYesterday = patients.filter(p =>
+    (p.type || 'treatment') === 'treatment' &&
+    p.date === yStr &&
+    getCardStatus(p) !== 'closed'
+  );
+  const rcYesterday = patients.filter(p =>
+    p.type === 'recare' &&
+    p.date === yStr &&
+    getCardStatus(p) !== 'closed'
+  );
+
+  const total = txYesterday.length + rcYesterday.length;
+  if (total === 0) { prompt.classList.add('hidden'); return; }
+
+  // Only show once per session
+  if (sessionStorage.getItem('morning-prompt-dismissed')) { prompt.classList.add('hidden'); return; }
+
+  const parts = [];
+  if (txYesterday.length > 0) parts.push(`${txYesterday.length} treatment`);
+  if (rcYesterday.length > 0) parts.push(`${rcYesterday.length} recare`);
+
+  document.getElementById('morningPromptTitle').textContent = `Good morning — you have follow-ups from yesterday`;
+  document.getElementById('morningPromptSub').textContent = parts.join(' · ') + ' patient' + (total !== 1 ? 's' : '') + ' need a call today';
+  prompt.classList.remove('hidden');
+}
+
+document.getElementById('morningPrompt').querySelector('.mp-pill-dismiss').addEventListener('click', () => {
+  sessionStorage.setItem('morning-prompt-dismissed', '1');
+});
 
 // ── Quick-Add ──────────────────────────────────────────────
 function openQuickAdd() {
@@ -1775,27 +2113,42 @@ function openQuickAdd() {
 function closeQuickAdd() { document.getElementById('qaOverlay').classList.add('hidden'); }
 
 function renderQA() {
+  const reasons = REASONS.map(r => `<option value="${r.key}">${r.label}</option>`).join('');
   document.getElementById('qaContent').innerHTML = `
     <p>Enter the child's name and phone before they walk out.</p>
     <div class="qa-fields">
       <div class="qa-field"><label>Child's First Name <span style="color:var(--rose)">*</span></label><input type="text" id="qaChildFirst" placeholder="First name" /></div>
       <div class="qa-field"><label>Child's Last Name <span style="color:var(--rose)">*</span></label><input type="text" id="qaChildLast" placeholder="Last name" /></div>
       <div class="qa-field"><label>Phone Number <span style="color:var(--rose)">*</span></label><input type="tel" id="qaPhone" placeholder="(555) 000-0000" oninput="formatPhone(this)" /></div>
+      <div class="qa-field">
+        <label>What didn't they schedule? <span style="color:var(--rose)">*</span></label>
+        <select id="qaType" class="qa-select" onchange="updateQAReasonOptions()" style="border:2px solid var(--border)">
+          <option value="treatment">💜 Treatment (fixing teeth)</option>
+          <option value="recare">🦷 Recare (cleaning / check-up)</option>
+        </select>
+      </div>
       <div class="qa-field"><label>Reason They Didn't Book</label>
         <select id="qaReason" class="qa-select" onchange="toggleReasonNote('qaReasonNote','qaReason')">
-          ${REASONS.map(r => `<option value="${r.key}">${r.label}</option>`).join('')}
+          ${reasons}
         </select>
       </div>
       <div class="qa-field hidden" id="qaReasonNote"><label>Note <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="text" id="qaReasonNoteInput" placeholder="Any extra detail…" /></div>
     </div>
-    <div class="qa-optional-toggle" onclick="toggleQAOptional()">+ Add treatment description (optional)</div>
+    <div class="qa-optional-toggle" onclick="toggleQAOptional()">+ Add description (optional)</div>
     <div class="qa-optional${qaOptionalVisible?' visible':''}" id="qaOptional">
-      <div class="qa-field"><label>Treatment Description</label><input type="text" id="qaTx" placeholder="e.g. Crown #14" /></div>
+      <div class="qa-field"><label>Description</label><input type="text" id="qaTx" placeholder="e.g. Crown #14" /></div>
     </div>
     <div class="qa-actions">
       <button class="btn-qa-cancel" onclick="closeQuickAdd()">Cancel</button>
       <button class="btn-qa-save" onclick="saveQuickAdd()">Save & Start Follow-Up →</button>
     </div>`;
+}
+
+function updateQAReasonOptions() {
+  const type = document.getElementById('qaType')?.value || 'treatment';
+  const reasons = type === 'recare' ? RECARE_REASONS : REASONS;
+  const sel = document.getElementById('qaReason');
+  if (sel) sel.innerHTML = reasons.map(r => `<option value="${r.key}">${r.label}</option>`).join('');
 }
 
 function toggleQAOptional() {
@@ -1819,6 +2172,7 @@ function saveQuickAdd() {
   if (!childFirst) { document.getElementById('qaChildFirst').classList.add('required-error'); document.getElementById('qaChildFirst').focus(); return; }
   if (!childLast) { document.getElementById('qaChildLast').classList.add('required-error'); document.getElementById('qaChildLast').focus(); return; }
   if (!phone) { document.getElementById('qaPhone').classList.add('required-error'); document.getElementById('qaPhone').focus(); return; }
+  const type = document.getElementById('qaType')?.value || 'treatment';
   const tx = document.getElementById('qaTx')?.value.trim() || '';
   const reason = document.getElementById('qaReason')?.value || '';
   const reasonNote = document.getElementById('qaReasonNoteInput')?.value.trim() || '';
@@ -1826,20 +2180,27 @@ function saveQuickAdd() {
   if (isDuplicate(fullName)) {
     if (!confirm(`${fullName} is already on the active list. Add them again anyway?`)) return;
   }
-  patients.unshift(newPatient(fullName, phone, todayStr(), tx, childFirst, reason, reasonNote));
+  patients.unshift(newPatient(fullName, phone, todayStr(), tx, childFirst, reason, reasonNote, type));
   render(); scheduleSave();
 
-  const isTCCase = TC_REASONS.has(reason);
+  const isRecare = type === 'recare';
+  const isTCCase = !isRecare && TC_REASONS.has(reason);
   const tcNote = isTCCase
     ? `<div class="qa-success-tc-note">💜 Sent to Treatment Coordinator<br><span>The TC will send them a treatment plan — front desk follow-up calls proceed as normal.</span></div>`
     : '';
 
+  const stepsNote = isRecare
+    ? 'Their day-after and 1-week follow-up calls are scheduled automatically.'
+    : 'Their 1-day, 3-day, and 2-week follow-up calls are scheduled automatically.';
+
+  const icon = isTCCase ? '💜' : isRecare ? '🦷' : '✅';
+
   document.getElementById('qaTitle').textContent = 'Patient Logged!';
   document.getElementById('qaContent').innerHTML = `
     <div class="qa-success">
-      <div class="qa-success-icon">${isTCCase ? '💜' : '✅'}</div>
+      <div class="qa-success-icon">${icon}</div>
       <h3>${fullName} is in the system</h3>
-      <p>Their 1-day, 3-day, and 2-week follow-up calls are scheduled automatically. You'll see them on tomorrow's call sheet.</p>
+      <p>${stepsNote} You'll see them on tomorrow's call sheet.</p>
       ${tcNote}
       <button class="btn-qa-another" onclick="document.getElementById('qaTitle').textContent='Logging Unscheduled Patient';renderQA();setTimeout(()=>document.getElementById('qaChildFirst')?.focus(),60)">+ Log Another Patient</button>
       <button class="btn-qa-close-success" onclick="closeQuickAdd()">Done</button>
@@ -1858,17 +2219,24 @@ function closeEOD() { document.getElementById('eodOverlay').classList.add('hidde
 function renderEOD() {
   const todayFmt = new Date().toLocaleDateString('en-US', { month:'short', day:'numeric' });
   const addedHTML = eodQueue.length ? `<div class="added-list">${eodQueue.map(q=>`
-    <div class="added-item"><span class="added-check">✓</span><div><div class="added-name">${q.name}${q.isTC?' <span style="font-size:0.68rem;color:#7c3aed;font-weight:600">💜 TC</span>':''}</div><div class="added-phone">${q.phone||'No phone'}</div></div></div>`).join('')}</div>` : '';
+    <div class="added-item"><span class="added-check">✓</span><div><div class="added-name">${q.name}${q.isTC?' <span style="font-size:0.68rem;color:#7c3aed;font-weight:600">💜 TC</span>':''} <span style="font-size:0.68rem;font-weight:600;color:${q.type==='recare'?'#0369a1':'#6d28d9'}">${q.type==='recare'?'🦷 Recare':'💜 Treatment'}</span></div><div class="added-phone">${q.phone||'No phone'}</div></div></div>`).join('')}</div>` : '';
   document.getElementById('eodContent').innerHTML = `
     <div class="eod-tag">End of Day · ${todayFmt}</div>
     <h2>${eodQueue.length === 0 ? 'Who Left Without Scheduling?' : 'Anyone Else?'}</h2>
-    <p>${eodQueue.length === 0 ? "Log any patients who had a treatment plan presented but didn't book. We'll set up their follow-up schedule automatically." : "Keep going, or tap Done when you've got everyone."}</p>
+    <p>${eodQueue.length === 0 ? "Log any patients who didn't book before leaving. We'll set up their follow-up schedule automatically." : "Keep going, or tap Done when you've got everyone."}</p>
     ${addedHTML}
     <div class="modal-fields">
       <div class="modal-field"><label>Child's First Name</label><input type="text" id="eodChildFirst" placeholder="First name" /></div>
       <div class="modal-field"><label>Child's Last Name</label><input type="text" id="eodChildLast" placeholder="Last name" /></div>
       <div class="modal-field"><label>Phone Number</label><input type="tel" id="eodPhone" placeholder="(555) 000-0000" oninput="formatPhone(this)" /></div>
-      <div class="modal-field"><label>Treatment Description (optional)</label><input type="text" id="eodTx" placeholder="e.g. Crown #14" /></div>
+      <div class="modal-field">
+        <label>What didn't they schedule?</label>
+        <select id="eodType" class="qa-select" onchange="updateEODReasonOptions()">
+          <option value="treatment">💜 Treatment (fixing teeth)</option>
+          <option value="recare">🦷 Recare (cleaning / check-up)</option>
+        </select>
+      </div>
+      <div class="modal-field"><label>Description (optional)</label><input type="text" id="eodTx" placeholder="e.g. Crown #14" /></div>
       <div class="modal-field"><label>Reason They Didn't Book</label>
         <select id="eodReason" class="qa-select" onchange="toggleReasonNote('eodReasonNote','eodReason')">
           ${REASONS.map(r => `<option value="${r.key}">${r.label}</option>`).join('')}
@@ -1883,11 +2251,19 @@ function renderEOD() {
   setTimeout(() => document.getElementById('eodName')?.focus(), 50);
 }
 
+function updateEODReasonOptions() {
+  const type = document.getElementById('eodType')?.value || 'treatment';
+  const reasons = type === 'recare' ? RECARE_REASONS : REASONS;
+  const sel = document.getElementById('eodReason');
+  if (sel) sel.innerHTML = reasons.map(r => `<option value="${r.key}">${r.label}</option>`).join('');
+}
+
 function eodAdd() {
   const childFirst = document.getElementById('eodChildFirst').value.trim();
   const childLast = document.getElementById('eodChildLast').value.trim();
   if (!childFirst) { document.getElementById('eodChildFirst').style.borderColor='var(--rose)'; document.getElementById('eodChildFirst').focus(); return; }
   const phone = document.getElementById('eodPhone').value.trim();
+  const type = document.getElementById('eodType')?.value || 'treatment';
   const tx = document.getElementById('eodTx').value.trim();
   const reason = document.getElementById('eodReason')?.value || '';
   const reasonNote = document.getElementById('eodReasonNoteInput')?.value.trim() || '';
@@ -1895,8 +2271,9 @@ function eodAdd() {
   if (isDuplicate(fullName)) {
     if (!confirm(`${fullName} is already on the active list. Add them again anyway?`)) return;
   }
-  eodQueue.push({ name: fullName, phone, isTC: TC_REASONS.has(reason) });
-  patients.unshift(newPatient(fullName, phone, todayStr(), tx, childFirst, reason, reasonNote));
+  const isTC = type === 'treatment' && TC_REASONS.has(reason);
+  eodQueue.push({ name: fullName, phone, isTC, type });
+  patients.unshift(newPatient(fullName, phone, todayStr(), tx, childFirst, reason, reasonNote, type));
   render(); scheduleSave(); renderEOD();
 }
 function eodFinish() { closeEOD(); }
@@ -2602,8 +2979,8 @@ if (sessionStorage.getItem('acorn-auth') === '1') {
   <div class="help-modal">
     <div class="help-modal-header">
       <button class="modal-close" onclick="closeHelp()">✕</button>
-      <div class="help-modal-tag">📋 Staff Reference</div>
-      <div class="help-modal-title">How to Use the Treatment Follow-Up Tracker</div>
+      <div class="help-modal-tag">📖 Staff Guide</div>
+      <div class="help-modal-title">Follow-Up Tracker — How It Works</div>
     </div>
     <div class="help-modal-body">
 
@@ -2615,12 +2992,17 @@ if (sessionStorage.getItem('acorn-auth') === '1') {
         </div>
         <div class="help-step">
           <div class="help-step-num">2</div>
-          <div class="help-step-text"><strong>Enter the child's first name, last name, and phone number.</strong> Treatment description is optional but helpful.<br><em>The 1-day, 3-day, and 2-week follow-up dates are set automatically — weekends are skipped.</em></div>
+          <div class="help-step-text"><strong>Enter the child's name and phone number.</strong> Then answer one quick question: <strong>did they leave without scheduling a recare (cleaning) or treatment (fixing teeth)?</strong><br><em>This routes them to the right follow-up list automatically.</em></div>
         </div>
         <div class="help-step">
           <div class="help-step-num">3</div>
-          <div class="help-step-text"><strong>Hit Save.</strong> The patient appears on the tracker immediately.</div>
+          <div class="help-step-text"><strong>Select the reason they didn't book</strong> if you know it — cost, scheduling conflict, wants to think about it, etc. This helps the team follow up with the right message.</div>
         </div>
+        <div class="help-step">
+          <div class="help-step-num">4</div>
+          <div class="help-step-text"><strong>Hit Save.</strong> The patient appears on their list immediately and follow-up dates are set automatically — weekends and holidays are skipped.</div>
+        </div>
+        <div class="help-tip">💡 <strong>Recare patients</strong> get a 2-step follow-up (day-after + 1 week). <strong>Treatment patients</strong> get a 3-step follow-up (1 day, 3 days, 2 weeks). The right text message is queued automatically for each.</div>
         <div class="help-tip">💡 If you miss someone at checkout, use the <strong>End-of-Day</strong> button to batch-add anyone from that day.</div>
       </div>
 
@@ -2628,7 +3010,7 @@ if (sessionStorage.getItem('acorn-auth') === '1') {
         <div class="help-section-title">Making Follow-Up Calls</div>
         <div class="help-step">
           <div class="help-step-num">1</div>
-          <div class="help-step-text"><strong>Check the Overdue and Due Today counts</strong> at the top — those are your priority patients for the day.</div>
+          <div class="help-step-text"><strong>Check the Overdue and Due Today counts</strong> at the top — those are your priority patients for the day. Both treatment and recare patients are included.</div>
         </div>
         <div class="help-step">
           <div class="help-step-num">2</div>
@@ -2636,7 +3018,7 @@ if (sessionStorage.getItem('acorn-auth') === '1') {
         </div>
         <div class="help-step">
           <div class="help-step-num">3</div>
-          <div class="help-step-text"><strong>No answer?</strong> Hit <strong>🔇 No Answer</strong> — this checks off the step automatically. Then tap <strong>📱 Copy Text</strong>, switch to Mango, and paste the message to send a follow-up text from Aliyah.</div>
+          <div class="help-step-text"><strong>No answer?</strong> Hit <strong>🔇 No Answer</strong> — this checks off the step automatically. Then tap <strong>📱 Copy Text</strong>, switch to Mango, and paste the message to send a follow-up text from Aliyah. The text will automatically reference whether it's a cleaning or treatment appointment.</div>
         </div>
         <div class="help-step">
           <div class="help-step-num">4</div>
@@ -2653,7 +3035,7 @@ if (sessionStorage.getItem('acorn-auth') === '1') {
         </div>
         <div class="help-step">
           <div class="help-step-num">2</div>
-          <div class="help-step-text"><strong>Patient came back on their own and scheduled?</strong> Search for their name, find their card, and hit <strong>🎉 Scheduled!</strong></div>
+          <div class="help-step-text"><strong>Patient called in on their own to schedule?</strong> Use the <strong>📞 Patient Scheduling?</strong> button in the header — search their name and mark them scheduled in one tap.</div>
         </div>
         <div class="help-step">
           <div class="help-step-num">3</div>
@@ -2666,11 +3048,11 @@ if (sessionStorage.getItem('acorn-auth') === '1') {
         <div class="help-section-title">Daily Denticon Check — End of Day</div>
         <div class="help-step">
           <div class="help-step-num">1</div>
-          <div class="help-step-text"><strong>Pull the unscheduled treatment report in Denticon</strong> to confirm no one was missed at checkout.<br><em>Steps coming soon — check with the office manager for instructions.</em></div>
+          <div class="help-step-text"><strong>Pull the unscheduled treatment report in Denticon</strong> to confirm no one was missed at checkout.<br><em>Check with the office manager for the exact steps in Denticon.</em></div>
         </div>
         <div class="help-step">
           <div class="help-step-num">2</div>
-          <div class="help-step-text"><strong>Compare the Denticon list against the tracker.</strong> Anyone on the Denticon list who isn't already in the tracker should be added using the <strong>End-of-Day</strong> button.</div>
+          <div class="help-step-text"><strong>Compare the Denticon list against this tracker.</strong> Anyone missing should be added using the <strong>End-of-Day</strong> button — you'll be asked whether it's a recare or treatment patient when you add them.</div>
         </div>
         <div class="help-tip">💡 This is your safety net — even if someone was missed at checkout, this check ensures no patient falls through the cracks.</div>
       </div>
@@ -2691,6 +3073,267 @@ if (sessionStorage.getItem('acorn-auth') === '1') {
     <button class="help-close-btn" onclick="closeHelp()">Got it — close this</button>
   </div>
 </div>
+
+<!-- Denticon Upload Modal -->
+<div class="modal-overlay hidden" id="denticonOverlay" onclick="if(event.target===this)closeDenticonUpload()">
+  <div class="denticon-modal">
+    <div class="denticon-modal-header">
+      <button class="modal-close" onclick="closeDenticonUpload()">✕</button>
+      <div class="denticon-modal-tag">📄 End-of-Day Check</div>
+      <div class="denticon-modal-title">Denticon Unscheduled Report</div>
+      <div class="denticon-modal-sub">Upload the PDF — we'll find anyone not already on the tracker</div>
+    </div>
+    <div class="denticon-modal-body" id="denticonModalBody">
+      <div class="denticon-upload-zone" id="denticonDropZone"
+        onclick="document.getElementById('denticonFileInput').click()"
+        ondragover="event.preventDefault();this.classList.add('drag-over')"
+        ondragleave="this.classList.remove('drag-over')"
+        ondrop="event.preventDefault();this.classList.remove('drag-over');handleDenticonFile(event.dataTransfer.files[0])">
+        <div class="denticon-upload-icon">📂</div>
+        <div class="denticon-upload-label">Click to upload or drag & drop</div>
+        <div class="denticon-upload-hint">Denticon unscheduled treatment report · PDF only</div>
+      </div>
+      <input type="file" id="denticonFileInput" class="denticon-upload-input" accept=".pdf" onchange="handleDenticonFile(this.files[0])" />
+    </div>
+    <div class="denticon-modal-footer">
+      <button class="btn-denticon-close" onclick="closeDenticonUpload()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Denticon PDF Upload ────────────────────────────────────
+
+// Load PDF.js from CDN
+(function() {
+  const script = document.createElement('script');
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+  script.onload = () => {
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  };
+  document.head.appendChild(script);
+})();
+
+let denticonResults = []; // { name, onTracker, patientId, added }
+
+function openDenticonUpload() {
+  denticonResults = [];
+  document.getElementById('denticonOverlay').classList.remove('hidden');
+  renderDenticonBody('upload');
+}
+
+function closeDenticonUpload() {
+  document.getElementById('denticonOverlay').classList.add('hidden');
+  document.getElementById('denticonFileInput').value = '';
+}
+
+function renderDenticonBody(state, data) {
+  const body = document.getElementById('denticonModalBody');
+  if (state === 'upload') {
+    body.innerHTML = `
+      <div class="denticon-upload-zone" id="denticonDropZone"
+        onclick="document.getElementById('denticonFileInput').click()"
+        ondragover="event.preventDefault();this.classList.add('drag-over')"
+        ondragleave="this.classList.remove('drag-over')"
+        ondrop="event.preventDefault();this.classList.remove('drag-over');handleDenticonFile(event.dataTransfer.files[0])">
+        <div class="denticon-upload-icon">📂</div>
+        <div class="denticon-upload-label">Click to upload or drag & drop</div>
+        <div class="denticon-upload-hint">Denticon unscheduled treatment report · PDF only</div>
+      </div>
+      <input type="file" id="denticonFileInput" class="denticon-upload-input" accept=".pdf" onchange="handleDenticonFile(this.files[0])" />`;
+  } else if (state === 'parsing') {
+    body.innerHTML = `<div class="denticon-parsing"><span class="denticon-parsing-spinner">⚙️</span>Reading report…</div>`;
+  } else if (state === 'results') {
+    renderDenticonResults();
+  } else if (state === 'error') {
+    body.innerHTML = `<div class="denticon-parsing">⚠️ ${data}<br><br><button class="btn-denticon-reset" onclick="renderDenticonBody('upload')">Try again</button></div>`;
+  }
+}
+
+async function handleDenticonFile(file) {
+  if (!file) return;
+  if (file.type !== 'application/pdf') {
+    renderDenticonBody('error', 'Please upload a PDF file.');
+    return;
+  }
+  renderDenticonBody('parsing');
+  try {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    let fullText = '';
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      // Get items with their x positions to detect columns
+      const items = content.items.map(item => ({
+        text: item.str.trim(),
+        x: item.transform[4],
+        y: item.transform[5]
+      })).filter(item => item.text.length > 0);
+      fullText += parseDenticonPage(items);
+    }
+    if (!fullText.trim()) {
+      renderDenticonBody('error', "Couldn't extract text from this PDF. Make sure it's a Denticon unscheduled report.");
+      return;
+    }
+    processDenticonText(fullText);
+  } catch(e) {
+    renderDenticonBody('error', 'Failed to read the PDF. Please try again.');
+    console.error(e);
+  }
+}
+
+function parseDenticonPage(items) {
+  // Group items by approximate row (same Y coordinate ±3px)
+  const rows = [];
+  items.forEach(item => {
+    const existing = rows.find(r => Math.abs(r.y - item.y) < 3);
+    if (existing) {
+      existing.items.push(item);
+    } else {
+      rows.push({ y: item.y, items: [item] });
+    }
+  });
+  // Sort rows top-to-bottom
+  rows.sort((a, b) => b.y - a.y);
+  // For each row, sort items left-to-right and join as tab-separated
+  return rows.map(row => {
+    row.items.sort((a, b) => a.x - b.x);
+    return row.items.map(i => i.text).join('\t');
+  }).join('\n');
+}
+
+function processDenticonText(text) {
+  const lines = text.split('\n').map(l => l.trim()).filter(Boolean);
+  const unscheduled = [];
+
+  lines.forEach(line => {
+    const cols = line.split('\t').map(c => c.trim());
+    if (cols.length < 2) return;
+
+    // Last column check — look for X or x
+    const lastCol = cols[cols.length - 1];
+    const hasX = /^x$/i.test(lastCol) || /^x$/i.test(cols[cols.length - 2]);
+    if (!hasX) return;
+
+    // First column should be patient name in Last, First format
+    const nameCol = cols[0];
+    // Must contain a comma and look like a name (letters only, no numbers)
+    if (!nameCol.includes(',')) return;
+    if (/\d/.test(nameCol)) return; // skip header rows or date rows
+    if (nameCol.length < 3) return;
+
+    const normalized = normalizeName(nameCol);
+    if (normalized && !unscheduled.find(u => u.normalized === normalized)) {
+      unscheduled.push({ raw: nameCol, normalized });
+    }
+  });
+
+  if (unscheduled.length === 0) {
+    renderDenticonBody('error', "No unscheduled patients found (rows with X in last column). Check that this is the correct report.");
+    return;
+  }
+
+  // Cross-reference against tracker
+  denticonResults = unscheduled.map(u => {
+    const match = patients.find(p => {
+      if (p.closed || (p.outcome && OUTCOME_MAP[p.outcome]?.closes)) return false;
+      return normalizeName(p.name) === u.normalized;
+    });
+    return {
+      raw: u.raw,
+      normalized: u.normalized,
+      onTracker: !!match,
+      patientId: match?.id || null,
+      added: false,
+    };
+  });
+
+  renderDenticonBody('results');
+}
+
+function normalizeName(name) {
+  return name.toLowerCase().replace(/[^a-z,\s]/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function renderDenticonResults() {
+  const body = document.getElementById('denticonModalBody');
+  const onTracker  = denticonResults.filter(r => r.onTracker);
+  const missing    = denticonResults.filter(r => !r.onTracker && !r.added);
+  const justAdded  = denticonResults.filter(r => r.added);
+
+  const summaryHTML = `
+    <div class="denticon-summary">
+      <div class="denticon-summary-item">
+        <div class="denticon-summary-dot" style="background:#34d399"></div>
+        <span><strong>${onTracker.length + justAdded.length}</strong> already on tracker</span>
+      </div>
+      <div class="denticon-summary-item">
+        <div class="denticon-summary-dot" style="background:#f59e0b"></div>
+        <span><strong>${missing.length}</strong> not on tracker</span>
+      </div>
+      <div class="denticon-summary-item" style="color:var(--muted);font-size:0.75rem">
+        ${denticonResults.length} total with X in report
+      </div>
+    </div>`;
+
+  const missingHTML = missing.length === 0 ? '' : `
+    <div class="denticon-result-section-title">⚠️ Not on tracker — needs to be added</div>
+    ${missing.map((r, idx) => `
+      <div class="denticon-result-row not-on" id="drow-${idx}">
+        <div class="denticon-result-name">${r.raw}</div>
+        <span class="denticon-result-status denticon-status-missing">Not logged</span>
+        <button class="btn-denticon-add" onclick="promptDenticonAdd(${idx})">+ Add</button>
+      </div>
+      <div class="denticon-type-picker hidden" id="dtype-${idx}">
+        <button class="btn-type-pick" onclick="addFromDenticon(${idx},'treatment')">💜 Treatment</button>
+        <button class="btn-type-pick" onclick="addFromDenticon(${idx},'recare')">🦷 Recare</button>
+      </div>`).join('')}`;
+
+  const onTrackerHTML = (onTracker.length + justAdded.length) === 0 ? '' : `
+    <div class="denticon-result-section-title" style="margin-top:16px">✅ Already on tracker</div>
+    ${[...justAdded, ...onTracker].map(r => `
+      <div class="denticon-result-row already-on">
+        <div class="denticon-result-name">${r.raw}</div>
+        <span class="denticon-result-status denticon-status-ok">${r.added ? 'Just added' : 'On tracker'}</span>
+      </div>`).join('')}`;
+
+  body.innerHTML = summaryHTML + `<div class="denticon-results">${missingHTML}${onTrackerHTML}</div>`;
+
+  // Update footer
+  const footer = document.querySelector('.denticon-modal-footer');
+  footer.innerHTML = `
+    <button class="btn-denticon-reset" onclick="renderDenticonBody('upload')">Upload different file</button>
+    <button class="btn-denticon-close" onclick="closeDenticonUpload()">Done</button>`;
+}
+
+function promptDenticonAdd(idx) {
+  // Toggle the type picker row
+  const picker = document.getElementById(`dtype-${idx}`);
+  if (!picker) return;
+  const isVisible = !picker.classList.contains('hidden');
+  // Close all pickers first
+  document.querySelectorAll('[id^="dtype-"]').forEach(el => el.classList.add('hidden'));
+  if (!isVisible) picker.classList.remove('hidden');
+}
+
+function addFromDenticon(idx, type) {
+  const result = denticonResults.filter(r => !r.onTracker && !r.added)[idx];
+  if (!result) return;
+
+  // Parse Last, First into parts
+  const parts = result.raw.split(',').map(s => s.trim());
+  const lastName = parts[0] || '';
+  const firstName = parts[1] || '';
+  const fullName = lastName && firstName ? `${lastName}, ${firstName}` : result.raw;
+  const childFirst = firstName || result.raw;
+
+  patients.unshift(newPatient(fullName, '', todayStr(), '', childFirst, '', '', type));
+  result.added = true;
+  render(); scheduleSave();
+  renderDenticonResults();
+}
+</script>
 
 </body>
 </html>
